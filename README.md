@@ -1,6 +1,4 @@
-The "if params[:name]" statement is not the best way to proceed with this app. It would be better to input a default in the text_field_tag for name. Something like:
-<%= text_field_tag :name, "Default" %>
-The second value in the text_field_tag is the default value with you could make any thing you want
+Best way to deal with form is to split into views. The form contains information for input form as well as the result form. 
 
 
 
