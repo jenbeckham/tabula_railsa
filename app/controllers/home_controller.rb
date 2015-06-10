@@ -6,6 +6,29 @@ class HomeController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def new
+  end
+
+  def create
+  end
+
+  def index
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
+
+
   # private def result_params
   #   params.require(:result).permit(:name, :chocolate, :puppies, :cash)
   # end
