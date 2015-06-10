@@ -6,17 +6,17 @@
   Puppies? <%= @home.puppies ? "Yes!" : "No" %><br>
   Cold Hard Cash? <%= @home.cash ? "Yes!" : "No" %><br>
 <% else %>
-  <%= form_tag home_form_path do %>
+  <%= form_for(@result, url: home_index_path) |f| do %>
     <div>
-      Name: <%= text_field_tag :name %>
+      Name: <%= f.text_field :name %>
     </div>
     <div>
       Favorites:<br>
-      <%= check_box_tag :chocolate %> Chocolate<br>
-      <%= check_box_tag :rainbows %> Rainbows<br>
-      <%= check_box_tag :puppies %> Puppies<br>
+      <%= f.check_box :chocolate %> Chocolate<br>
+      <%= f.check_box :rainbows %> Rainbows<br>
+      <%= f.check_box :puppies %> Puppies<br>
       <% if Rails.env.development%>
-        <%= check_box_tag :cold_hard_cash %> Cold Hard Cash<br>
+        <%= f.check_box :cold_hard_cash %> Cold Hard Cash<br>
       <%= end %>
     </div>
     <%= submit_tag %>

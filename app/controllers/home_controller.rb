@@ -10,6 +10,7 @@ class HomeController < ApplicationController
   end
 
   def new
+    @result = Result.new
   end
 
   def create
@@ -26,6 +27,8 @@ class HomeController < ApplicationController
 
   def destroy
   end
+
+
 
 
 
