@@ -1,0 +1,42 @@
+<% form_for (@result) do |f| %>
+  <% if @result.errors.any? %>
+  <div id="error_explanation">
+      <h2><%= pluralize(@result.errors.count, "error") %> prohibited this parent from being saved:</h2>
+
+      <ul>
+      <% @result.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :chocolate %><br>
+    <%= f.radio_button :chocolate, 'Yes', :checked => true %>
+    <%= f.radio_button :chocolate, 'No', :checked => false %>
+  </div>
+  <div class="field">
+    <%= f.label :rainbows %><br>
+    <%= f.radio_button :rainbows, 'Yes', :checked => true %>
+    <%= f.radio_button :rainbows, 'No', :checked => false %>
+  </div>
+  <div class="field">
+    <%= f.label :puppies %><br>
+    <%= f.radio_button :puppies, 'Yes', :checked => true %>
+    <%= f.radio_button :puppies, 'No', :checked => false %>
+  </div>
+  <% if Rails.env.development%>
+    <div class="field">
+      <%= f.label :cold_hard_cash %><br>
+      <%= f.radio_button :cold_hard_cash, 'Yes', :checked => true %>
+      <%= f.radio_button :cold_hard_cash, 'No', :checked => false %>
+    </div>
+  <%= end %>
+  <div class="actions">
+    <%=f.submit%>
+  </div>

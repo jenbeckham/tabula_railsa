@@ -1,11 +1,13 @@
 class HomeController < ApplicationController
 
   def form
-    @result = Result.new(name: params[:name], chocolate: params[:chocolate], rainbows: params[:rainbows], cash: params[:cash])
+    if request.post?
+      @result = Result.create!(name: params[:name], chocolate: params[:chocolate], rainbows: params[:rainbows], cold_hard_cash: params[:cash])
+    end
   end
 
-  def new
-
-  end
+  # private def result_params
+  #   params.require(:result).permit(:name, :chocolate, :puppies, :cash)
+  # end
 
 end

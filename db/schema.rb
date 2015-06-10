@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 20150609131003) do
     t.boolean  "chocolate"
     t.boolean  "rainbows"
     t.boolean  "puppies"
-    t.boolean  "cash"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "cold_hard_cash"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
 end

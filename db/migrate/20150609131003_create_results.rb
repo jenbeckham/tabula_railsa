@@ -5,7 +5,7 @@ class CreateResults < ActiveRecord::Migration
       t.boolean :chocolate
       t.boolean :rainbows
       t.boolean :puppies
-      t.boolean :cash
+      t.boolean :cold_hard_cash
 
       t.timestamps null: false
     end

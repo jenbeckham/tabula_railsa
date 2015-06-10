@@ -1,10 +1,10 @@
 <% if params[:name] %>
   Thanks for submitting the form!  Here are your answers:<br>
-  Name: <%= params[:name] %><br>
-  Chocolate? <%= params[:chocolate] ? "Yes!" : "No" %><br>
-  Rainbows? <%= params[:rainbows] ? "Yes!" : "No" %><br>
-  Puppies? <%= params[:puppies] ? "Yes!" : "No" %><br>
-  Cold Hard Cash? <%= params[:cash] ? "Yes!" : "No" %><br>
+  Name: <%= @home.name %><br>
+  Chocolate? <%= @home.chocolate ? "Yes!" : "No" %><br>
+  Rainbows? <%= @home.rainbows ? "Yes!" : "No" %><br>
+  Puppies? <%= @home.puppies ? "Yes!" : "No" %><br>
+  Cold Hard Cash? <%= @home.cash ? "Yes!" : "No" %><br>
 <% else %>
   <%= form_tag home_form_path do %>
     <div>
@@ -16,7 +16,7 @@
       <%= check_box_tag :rainbows %> Rainbows<br>
       <%= check_box_tag :puppies %> Puppies<br>
       <% if Rails.env.development%>
-      <%= check_box_tag :cold_hard_cash %> Cold Hard Cash<br>
+        <%= check_box_tag :cold_hard_cash %> Cold Hard Cash<br>
       <%= end %>
     </div>
     <%= submit_tag %>
