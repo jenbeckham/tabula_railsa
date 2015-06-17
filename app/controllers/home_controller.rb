@@ -1,39 +1,35 @@
 class HomeController < ApplicationController
 
-  def form
-    if request.post?
-      @result = Result.create!(name: params[:name], chocolate: params[:chocolate], rainbows: params[:rainbows], cold_hard_cash: params[:cash])
+  def new
+    @result = Result.new
+    unless Result.find_by_name(name: session[:name]) == @result.name
+      redirect_to home_path, notice: "Only one submission at time"
+    end
+  end
+
+  def create
+    @survey = Survey.new(survey_params)
+
+    respond_to do |format|
+      if @survey.save
+        format.html { redirect_to home_path(@result), notice: 'Survey was successfully created.' }
+        format.json { render :show, status: :created, location: @result }
+      else
+        format.html { render :new }
+        format.json { render json: @result.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def show
-  end
-
-  def new
-    @result = Result.new
-  end
-
-  def create
-  end
-
-  def index
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
+    @result = Result.find(params[:id])
   end
 
 
 
+  private def result_params
+    params.require(:result).permit(:name, :chocolate, :rainbow, :puppies, :cash)
+  end
 
-
-  # private def result_params
-  #   params.require(:result).permit(:name, :chocolate, :puppies, :cash)
-  # end
 
 end
