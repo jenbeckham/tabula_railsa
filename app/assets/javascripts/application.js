@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-  document.getElementsById("disable-button").onclick = function{
-    this.disabled = true;
+  function disable() {
+    var button = document.getElementById("disable-button");
+    setTimeout(function() {button.disabled =true}, 1);
   }
