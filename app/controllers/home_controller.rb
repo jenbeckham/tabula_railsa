@@ -2,9 +2,9 @@ class HomeController < ApplicationController
 
   def new
     @result = Result.new
-    unless Result.find_by_name(name: session[:name]) == @result.name
-      redirect_to home_path, notice: "Only one submission at time"
-    end
+    # unless Result.find_by_name(name: session[:name]) == @result.name
+    #   redirect_to home_path, notice: "Only one submission at time"
+    # end
   end
 
   def create
