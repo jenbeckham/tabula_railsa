@@ -18,3 +18,7 @@
     var button = document.getElementById("disable-button");
     setTimeout(function() {button.disabled =true}, 1);
   }
+
+  $("#responses-field").hide()
+  $("name-field").on(if$("#name-field").val() != ""
+    $("responses-field").show())

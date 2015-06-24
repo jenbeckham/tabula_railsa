@@ -1,8 +1,8 @@
 <%= form_for(@survey, url: home_index_path) do |f|%>
-  <div>
+  <div id="name-field">
     Name: <%= f.text_field :name %>
   </div>
-  <div>
+  <div id="responses-field">
     Favorites:<br>
     <%= f.check_box :chocolate %> Chocolate<br>
     <%= f.check_box :rainbow %> Rainbows<br>

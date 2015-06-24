@@ -1,4 +1,4 @@
-<% form_for (@result) do |f| %>
+<% form_for(@result) do |f| %>
   <% if @result.errors.any? %>
   <div id="error_explanation">
       <h2><%= pluralize(@result.errors.count, "error") %> prohibited this parent from being saved:</h2>
@@ -11,25 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" id="show-field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
+  <div class="field" id="hide-field">
     <%= f.label :chocolate %><br>
     <%= f.radio_button :chocolate, 'Yes', :checked => true %>
     <%= f.radio_button :chocolate, 'No', :checked => false %>
   </div>
-  <div class="field">
+  <div class="field" id="hide-field">
     <%= f.label :rainbows %><br>
     <%= f.check_box :rainbows %>
   </div>
-  <div class="field">
+  <div class="field" id="hide-field">
     <%= f.label :puppies %><br>
     <%= f.check_box :puppies %>
   </div>
   <% if Rails.env.development%>
-    <div class="field">
+    <div class="field" id="hide-field">
       <%= f.label :cold_hard_cash %><br>
       <%= f.check_box :cold_hard_cash %>
     </div>
